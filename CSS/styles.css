@@ -1,0 +1,48 @@
+body {
+    padding: 5rem;
+    display: flex;
+    justify-content: center;
+    width: auto;
+}
+
+#calcBody {
+    height: 37.5rem;
+    width: 24.5rem;
+    
+    justify-content: center;
+    border: 1px solid black;
+}
+
+#calcHead {
+    height: 33%;
+    
+    padding: 1rem;
+    border: 1px solid red;
+}
+
+#calcLogo {
+    height: 35%;
+    display: flex;
+    justify-content: center;
+    border: 1px solid blue;
+}
+
+#calcDisplay {
+    height: 65%;
+    display: flex;
+    justify-content: center;
+    border: 1px solid green;
+}
+
+#calcButtons {
+    padding: 1rem;
+    
+}
+
+.btnRow {
+    height: 25%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    justify-content: center;
+    border: 1px solid purple;
+}
