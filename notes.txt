@@ -1,0 +1,46 @@
+# calculator
+
+~~~~~~~~~~~Tasks~~~~~~~~~
+1. Understand the Problem 
+    - reword it if needed
+2. Plan 
+    - answer general questions 
+    --does program have user interface?
+    --whatwill it look like?
+    --What inputs will it have? Will user enter datata or will you get input from somewhere else?
+    --What is the desired output
+    --Given the inputs, what steps are neccessary to return desired output
+3. Psudocode 
+    - write out code in natural language that will solve the last question from before
+4. Divide and conquer
+    - identify subproblems from the big problem, dont go after big problem from the start. Break it down and start with the smallest problems and work your way up
+   
+
+    --------------------------------------------------
+
+    1. Problem: 
+      - create an application that perfoms the following functions:
+        -- a. add
+        -- b. subtract
+        -- c. multiply
+        -- d. divide
+      - will need to make an 'operate' function that takes two or more numbers, then calls one of the above funtions
+      
+
+    2. Plan
+        --will have a Calculator designed interface. 
+        --Will need to make functions to display and stor inputed values
+        --users should be able to sting together multiple operations to get the correct answer
+        --should not evaluate more than one pair of numbers at a time
+    
+    3. Psudocode
+    
+       
+    
+    4. Subproblems
+    - need to create user interface
+    - interface needs to populate and display selected numbers and oporators
+    - selected numbers and operators need to be stored in variables 
+    - the '=' will need to prompt the 'oporate' function to oporate the selecter math function with the stoared number variables
+       
+
