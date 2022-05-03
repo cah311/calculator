@@ -6,16 +6,16 @@ body {
 }
 
 #calcBody {
-    height: 37.5rem;
-    width: 24.5rem;
+    height: 38rem;
+    width: 23rem;
     
     justify-content: center;
     border: 1px solid black;
 }
 
 #calcHead {
-    height: 33%;
-    
+    height: 25%;
+   
     padding: 1rem;
     border: 1px solid red;
 }
@@ -23,26 +23,59 @@ body {
 #calcLogo {
     height: 35%;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     border: 1px solid blue;
+}
+
+#solarPanel {
+    display: flex;
+    align-self: flex-end;
+}
+
+.solarBox {
+    height: 2.5rem;
+    width: 2.5rem;
+    border: 1px solid purple;
 }
 
 #calcDisplay {
     height: 65%;
     display: flex;
     justify-content: center;
+    padding-top: 0.75rem;
     border: 1px solid green;
 }
 
+#displayBox {
+    border: 1px solid black;
+    height: 100%;
+    width: 100%;
+}
+
 #calcButtons {
-    padding: 1rem;
+    padding: 1rem 1.3rem 5rem 1.3rem;
     
 }
 
 .btnRow {
-    height: 25%;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    justify-content: center;
+    height: 4.3rem;
+    margin-top: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    
     border: 1px solid purple;
 }
+
+button {
+    aspect-ratio: 1 / 1 ;
+}
+
+#clear {
+    width: 9.55rem;
+}
+
+#zero {
+    width: 9.55rem;
+}
+
