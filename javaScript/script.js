@@ -26,6 +26,11 @@ function numbersClicked(e) {
         variableCounter = 0;
     }
     
+    if (mathEquation == 'solve') {
+        display.textContent = x;
+        mathEquation = "";
+    }
+
 }
 
 //delete button
@@ -57,7 +62,7 @@ function equalFunction(e) {
         let solution = x + equationVariable;
         display.textContent = solution;
         equationVariable = 0;
-        //equationVariable = display.textContent
+        mathEquation = 'solve';
         console.log('equationVariable:', equationVariable)
         console.log('solution:',solution)
     }
