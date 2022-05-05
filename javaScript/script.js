@@ -10,10 +10,17 @@ for (i = 0; i < numbers.length; i++) {
 function numbersClicked(e, ) {
     let x = this.innerHTML
     console.log(x);
+    
+    
     if (display.textContent == '0000000000'){
+
         display.textContent = x;
     } else {
-        display.textContent += x
+        if (display.textContent.length < 10) {
+            display.textContent += x
+        
+
+        }
     }
     
 }
