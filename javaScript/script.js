@@ -44,16 +44,37 @@ function deleteNumber(e) {
 
 let equationVariable = 0; 
 let variableCounter = 0;
+let mathEquation;
+
+//equal
+let equalBtn = document.querySelector('#equal')
+equalBtn.addEventListener('click', equalFunction)
+
+function equalFunction(e) {
+    
+    if (mathEquation == 'add') {
+        x = parseInt(display.textContent)
+        let solution = x + equationVariable;
+        display.textContent = solution;
+        equationVariable = 0;
+        //equationVariable = display.textContent
+        console.log('equationVariable:', equationVariable)
+        console.log('solution:',solution)
+    }
+    
+}
 
 //add
 let addBtn = document.querySelector('#add')
-
 addBtn.addEventListener('click', addFunction)
 
 function addFunction (e) {
     x = parseInt(display.textContent)
-    equationVariable = equationVariable + x;
+    equationVariable = parseInt(equationVariable) + x;
+    x = 0;
     variableCounter ++;
-    console.log(equationVariable)
+    console.log('equationVariable:', equationVariable)
+    mathEquation = 'add';
+    console.log(mathEquation)
     
 }
