@@ -12,13 +12,10 @@ for (i = 0; i < numbers.length; i++) {
 function numbersClicked(e) {
     let x = this.innerHTML
    
-    
-    if (display.textContent == '0000000000'){
+    if (display.textContent == '0'){
         display.textContent = x;
     } else {
-        if (display.textContent.length < 10) {
-            display.textContent += x
-        }
+        display.textContent += x
     }
 
     if (variableCounter > 0) {
@@ -26,7 +23,7 @@ function numbersClicked(e) {
         variableCounter = 0;
     }
     
-    if (mathEquation == 'solve') {
+    if (mathEquation == 'solve' || mathEquation == 'cleared') {
         display.textContent = x;
         mathEquation = "";
     }
@@ -67,6 +64,18 @@ function equalFunction(e) {
         console.log('solution:',solution)
     }
     
+}
+
+//clear
+
+let acBtn = document.querySelector('#clear');
+acBtn.addEventListener('click', clearFunction)
+
+function clearFunction (e) {
+    display.textContent = 0;
+    let equationVariable = 0; 
+    
+    let mathEquation = 'cleared';
 }
 
 //add
