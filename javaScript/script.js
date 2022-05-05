@@ -11,7 +11,7 @@ for (i = 0; i < numbers.length; i++) {
 
 function numbersClicked(e) {
     let x = this.innerHTML
-    console.log(x);
+   
     
     if (display.textContent == '0000000000'){
         display.textContent = x;
@@ -19,6 +19,11 @@ function numbersClicked(e) {
         if (display.textContent.length < 10) {
             display.textContent += x
         }
+    }
+
+    if (variableCounter > 0) {
+        display.textContent = x;
+        variableCounter = 0;
     }
     
 }
@@ -32,7 +37,23 @@ function deleteNumber(e) {
 
     x = x.slice(0, -1);
     display.textContent = x;
-    if (display.textContent.lenth === 0) {
-        display.textContent == '0';
-    }
+    
+}
+
+//equations 
+
+let equationVariable = 0; 
+let variableCounter = 0;
+
+//add
+let addBtn = document.querySelector('#add')
+
+addBtn.addEventListener('click', addFunction)
+
+function addFunction (e) {
+    x = parseInt(display.textContent)
+    equationVariable = equationVariable + x;
+    variableCounter ++;
+    console.log(equationVariable)
+    
 }
