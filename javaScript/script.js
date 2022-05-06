@@ -28,9 +28,7 @@ function numbersClicked(e) {
         mathEquation = "";
     }
 
-    // if (mathEquation == 'subtract') {
-
-    // }
+    
 
 }
 
@@ -69,6 +67,14 @@ function equalFunction(e) {
     } else if (mathEquation == 'subtract') {
         x = parseFloat(display.textContent) 
         let solution = equationVariable - x;
+        display.textContent = solution;
+        equationVariable = 0;
+        mathEquation = 'solve';
+        console.log('equationVariable:', equationVariable)
+        console.log('solution:',solution)
+    } else if (mathEquation == 'multiply') {
+        x = parseFloat(display.textContent) 
+        let solution = equationVariable * x;
         display.textContent = solution;
         equationVariable = 0;
         mathEquation = 'solve';
@@ -117,6 +123,23 @@ function subFunction (e) {
 
     variableCounter ++;
     mathEquation = 'subtract';
+    console.log('equationVariable:', equationVariable)
+
+    console.log(mathEquation)
+    
+}
+
+//multiply
+let multBtn = document.querySelector('#multiply')
+multBtn.addEventListener('click', multFunction)
+
+function multFunction (e) {
+    let x = parseFloat(display.textContent)
+    console.log('x:',x)
+    equationVariable = x;
+
+    variableCounter ++;
+    mathEquation = 'multiply';
     console.log('equationVariable:', equationVariable)
 
     console.log(mathEquation)
