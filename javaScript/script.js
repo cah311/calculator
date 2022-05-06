@@ -1,5 +1,5 @@
 
-let display = document.querySelector('#numberTxt')
+let display = document.querySelector('#numberTxt') //Number display for calculator
 
 
 //change numbers on display
@@ -12,6 +12,7 @@ for (i = 0; i < numbers.length; i++) {
 function numbersClicked(e) {
     let x = this.innerHTML
    
+    //Limit number aditions so digits dont go outside display 
     if (display.textContent.length <= 9) {
         if (display.textContent == '0'){
             display.textContent = x;
@@ -19,21 +20,18 @@ function numbersClicked(e) {
             display.textContent += x
         }
     }
-    
-    
 
+    //Allows number to change after a function button has been selected
     if (variableCounter > 0) {
         display.textContent = x;
         variableCounter = 0;
     }
     
+    //Allows number to change after solve or clear
     if (mathEquation == 'solve' || mathEquation == 'cleared') {
         display.textContent = x;
         mathEquation = "";
-    }
-
-    
-
+    } 
 }
 
 //delete button
@@ -48,35 +46,39 @@ function deleteNumber(e) {
     
 }
 
-//equations 
+//Button Functions
 
 let equationVariable = 0; 
 let variableCounter = 0;
 let mathEquation;
 
-//equal
+//equal button
 let equalBtn = document.querySelector('#equal')
 equalBtn.addEventListener('click', equalFunction)
 
 function equalFunction(e) {
     
     if (mathEquation == 'add') {
+        
         x = parseFloat(display.textContent)
         let solution = x + equationVariable;
         display.textContent = solution;
+        while (display.textContent.length > 9) {
+            display.textContent = display.textContent.slice(0, -1);
+        }
         equationVariable = 0;
         mathEquation = 'solve';
-        console.log('equationVariable:', equationVariable)
-        console.log('solution:',solution)
+        
     } else if (mathEquation == 'subtract') {
+        
         x = parseFloat(display.textContent) 
         let solution = equationVariable - x;
         display.textContent = solution;
         equationVariable = 0;
         mathEquation = 'solve';
-        console.log('equationVariable:', equationVariable)
-        console.log('solution:',solution)
+        
     } else if (mathEquation == 'multiply') {
+        
         x = parseFloat(display.textContent) 
         let solution = equationVariable * x;
         display.textContent = solution;
@@ -85,20 +87,17 @@ function equalFunction(e) {
         }
         equationVariable = 0;
         mathEquation = 'solve';
-        console.log('equationVariable:', equationVariable)
-        console.log('solution:',solution)
+        
     } else if (mathEquation == 'divide') {
         x = parseFloat(display.textContent) 
         let solution = equationVariable / x;
-        //solution = solution.toFixed(8)
         display.textContent = solution;
         while (display.textContent.length > 9) {
             display.textContent = display.textContent.slice(0, -1);
         }
         equationVariable = 0;
         mathEquation = 'solve';
-        console.log('equationVariable:', equationVariable)
-        console.log('solution:',solution)
+        
     }
     
 }
@@ -111,7 +110,6 @@ acBtn.addEventListener('click', clearFunction)
 function clearFunction (e) {
     display.textContent = 0;
     let equationVariable = 0; 
-    
     let mathEquation = 'cleared';
 }
 
@@ -120,14 +118,12 @@ let addBtn = document.querySelector('#add')
 addBtn.addEventListener('click', addFunction)
 
 function addFunction (e) {
+
     x = parseFloat(display.textContent)
-    console.log('x:',x)
     equationVariable = parseFloat(equationVariable) + x;
     x = 0;
     variableCounter ++;
-    console.log('equationVariable:', equationVariable)
     mathEquation = 'add';
-    console.log(mathEquation)
     
 }
 
@@ -136,15 +132,11 @@ let subBtn = document.querySelector('#minus')
 subBtn.addEventListener('click', subFunction)
 
 function subFunction (e) {
-    x = parseFloat(display.textContent)
-    console.log('x:',x)
-    equationVariable = parseFloat(equationVariable) + x;
 
+    x = parseFloat(display.textContent)
+    equationVariable = parseFloat(equationVariable) + x;
     variableCounter ++;
     mathEquation = 'subtract';
-    console.log('equationVariable:', equationVariable)
-
-    console.log(mathEquation)
     
 }
 
@@ -154,14 +146,9 @@ multBtn.addEventListener('click', multFunction)
 
 function multFunction (e) {
     let x = parseFloat(display.textContent)
-    console.log('x:',x)
     equationVariable = x;
-
     variableCounter ++;
     mathEquation = 'multiply';
-    console.log('equationVariable:', equationVariable)
-
-    console.log(mathEquation)
     
 }
 
@@ -170,15 +157,11 @@ let divideBtn = document.querySelector('#divide')
 divideBtn.addEventListener('click', divideFunction)
 
 function divideFunction (e) {
-    let x = parseFloat(display.textContent)
-    console.log('x:',x)
-    equationVariable = x;
 
+    let x = parseFloat(display.textContent)
+    equationVariable = x;
     variableCounter ++;
     mathEquation = 'divide';
-    console.log('equationVariable:', equationVariable)
-
-    console.log(mathEquation)
     
 }
 
