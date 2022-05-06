@@ -80,6 +80,14 @@ function equalFunction(e) {
         mathEquation = 'solve';
         console.log('equationVariable:', equationVariable)
         console.log('solution:',solution)
+    } else if (mathEquation == 'divide') {
+        x = parseFloat(display.textContent) 
+        let solution = equationVariable / x;
+        display.textContent = solution;
+        equationVariable = 0;
+        mathEquation = 'solve';
+        console.log('equationVariable:', equationVariable)
+        console.log('solution:',solution)
     }
     
 }
@@ -140,6 +148,23 @@ function multFunction (e) {
 
     variableCounter ++;
     mathEquation = 'multiply';
+    console.log('equationVariable:', equationVariable)
+
+    console.log(mathEquation)
+    
+}
+
+//divide
+let divideBtn = document.querySelector('#divide')
+divideBtn.addEventListener('click', divideFunction)
+
+function divideFunction (e) {
+    let x = parseFloat(display.textContent)
+    console.log('x:',x)
+    equationVariable = x;
+
+    variableCounter ++;
+    mathEquation = 'divide';
     console.log('equationVariable:', equationVariable)
 
     console.log(mathEquation)
