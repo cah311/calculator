@@ -28,6 +28,10 @@ function numbersClicked(e) {
         mathEquation = "";
     }
 
+    // if (mathEquation == 'subtract') {
+
+    // }
+
 }
 
 //delete button
@@ -55,8 +59,16 @@ equalBtn.addEventListener('click', equalFunction)
 function equalFunction(e) {
     
     if (mathEquation == 'add') {
-        x = parseInt(display.textContent)
+        x = parseFloat(display.textContent)
         let solution = x + equationVariable;
+        display.textContent = solution;
+        equationVariable = 0;
+        mathEquation = 'solve';
+        console.log('equationVariable:', equationVariable)
+        console.log('solution:',solution)
+    } else if (mathEquation == 'subtract') {
+        x = parseFloat(display.textContent) 
+        let solution = equationVariable - x;
         display.textContent = solution;
         equationVariable = 0;
         mathEquation = 'solve';
@@ -83,8 +95,9 @@ let addBtn = document.querySelector('#add')
 addBtn.addEventListener('click', addFunction)
 
 function addFunction (e) {
-    x = parseInt(display.textContent)
-    equationVariable = parseInt(equationVariable) + x;
+    x = parseFloat(display.textContent)
+    console.log('x:',x)
+    equationVariable = parseFloat(equationVariable) + x;
     x = 0;
     variableCounter ++;
     console.log('equationVariable:', equationVariable)
@@ -92,3 +105,22 @@ function addFunction (e) {
     console.log(mathEquation)
     
 }
+
+//subtract
+let subBtn = document.querySelector('#minus')
+subBtn.addEventListener('click', subFunction)
+
+function subFunction (e) {
+    x = parseFloat(display.textContent)
+    console.log('x:',x)
+    equationVariable = parseFloat(equationVariable) + x;
+
+    variableCounter ++;
+    mathEquation = 'subtract';
+    console.log('equationVariable:', equationVariable)
+
+    console.log(mathEquation)
+    
+}
+
+
