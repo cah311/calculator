@@ -13,7 +13,7 @@ function numbersClicked(e) {
     let x = this.innerHTML
    
     //Limit number aditions so digits dont go outside display 
-    if (display.textContent.length <= 9) {
+    if (display.textContent.length <= 7) {
         if (display.textContent == '0'){
             display.textContent = x;
         } else {
@@ -63,7 +63,7 @@ function equalFunction(e) {
         x = parseFloat(display.textContent)
         let solution = x + equationVariable;
         display.textContent = solution;
-        while (display.textContent.length > 9) {
+        while (display.textContent.length > 7) {
             display.textContent = display.textContent.slice(0, -1);
         }
         equationVariable = 0;
@@ -82,7 +82,7 @@ function equalFunction(e) {
         x = parseFloat(display.textContent) 
         let solution = equationVariable * x;
         display.textContent = solution;
-        while (display.textContent.length > 9) {
+        while (display.textContent.length > 7) {
             display.textContent = display.textContent.slice(0, -1);
         }
         equationVariable = 0;
@@ -92,7 +92,7 @@ function equalFunction(e) {
         x = parseFloat(display.textContent) 
         let solution = equationVariable / x;
         display.textContent = solution;
-        while (display.textContent.length > 9) {
+        while (display.textContent.length > 7) {
             display.textContent = display.textContent.slice(0, -1);
         }
         equationVariable = 0;

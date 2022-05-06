@@ -1,9 +1,3 @@
-@font-face {
-    
-    src: url(fonts/digital-7.ttf);
-    
-    font-size: "digital-7";
-}
 
 body {
     padding: 5rem;
@@ -13,7 +7,7 @@ body {
 }
 
 #calcBody {
-    height: 38rem;
+    height: 39.5rem;
     width: 23rem;
     
     justify-content: center;
@@ -22,8 +16,8 @@ body {
 
 #calcHead {
     height: 25%;
-   
-    padding: 1rem;
+  
+    padding: 1rem 1rem 2rem 1rem;
     border: 1px solid red;
 }
 
@@ -50,6 +44,7 @@ body {
     display: flex;
     justify-content: center;
     padding-top: 0.75rem;
+    
     border: 1px solid green;
 }
 
@@ -64,8 +59,8 @@ body {
 #numberTxt {
 align-self: center;
 margin-right: 0.3rem;
-font-size: 4rem;
-font-family: digital-7;
+font-size: 3rem;
+font-family: 'Orbitron', sans-serif;
 }
 
 #calcButtons {
