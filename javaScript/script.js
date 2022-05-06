@@ -12,11 +12,15 @@ for (i = 0; i < numbers.length; i++) {
 function numbersClicked(e) {
     let x = this.innerHTML
    
-    if (display.textContent == '0'){
-        display.textContent = x;
-    } else {
-        display.textContent += x
+    if (display.textContent.length <= 9) {
+        if (display.textContent == '0'){
+            display.textContent = x;
+        } else {
+            display.textContent += x
+        }
     }
+    
+    
 
     if (variableCounter > 0) {
         display.textContent = x;
@@ -76,6 +80,9 @@ function equalFunction(e) {
         x = parseFloat(display.textContent) 
         let solution = equationVariable * x;
         display.textContent = solution;
+        while (display.textContent.length > 9) {
+            display.textContent = display.textContent.slice(0, -1);
+        }
         equationVariable = 0;
         mathEquation = 'solve';
         console.log('equationVariable:', equationVariable)
@@ -83,7 +90,11 @@ function equalFunction(e) {
     } else if (mathEquation == 'divide') {
         x = parseFloat(display.textContent) 
         let solution = equationVariable / x;
+        //solution = solution.toFixed(8)
         display.textContent = solution;
+        while (display.textContent.length > 9) {
+            display.textContent = display.textContent.slice(0, -1);
+        }
         equationVariable = 0;
         mathEquation = 'solve';
         console.log('equationVariable:', equationVariable)
